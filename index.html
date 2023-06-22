@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8"> 
+    <head>
+        <title>Bar Menu Hale O'Mo'</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="Resources/Beverages.js"></script>
+        <script type="text/javascript">
+
+            function populateDiv(divName, array) {
+                var div = document.getElementById(divName);
+                array.forEach(element => {
+                    div.innerHTML = div.innerHTML + 
+                    "<div class=\"beverage-item\"> " +
+                    " <h1>" + element.brand + "</h1>" +
+                    " <h2>" + element.product + "</h1>" + 
+                    "<p class=\"description\">" + element.description + "</p>" +
+                    " <hr> " +
+                    "</div>";
+                });
+            }
+
+            /*
+            load function reads the thumbnails from a list and puts them on a selector screen.
+            */
+            function load() {
+                setTimeout(function() {
+                    document.getElementById("top-div").style.visibility = 'hidden';
+                    document.getElementById("top-div").remove();
+                }, 10000);
+                Object.keys(beverages).forEach(key => {
+                    document.getElementById("menu-items").innerHTML = document.getElementById("menu-items").innerHTML + 
+                    "<h3 class=\"category-header\">" + beverages[key].title + "</h3>";
+                    populateDiv('menu-items', beverages[key].products);
+
+                })
+                
+            }
+        </script>
+    </head>
+<body onload="load()">
+    <div id="top-div" class="top-div">
+        <img id="banner-image" src="Resources/95KaIkenaLoop-medium.png" alt="Hale O'Mo'" class="banner">
+    </div>
+    <br />
+    <br />
+    <div id="image-div" class="image-div tooltip">
+        <img src="Resources/CheddarHappy.png"  alt="Cheddar Happy" class="base-image">
+        <span class="tooltiptext">Feed Me!</span>
+    </div>
+    <div class="outer-div">
+        <div id="header" class="header-div">
+            <h1>Bar Menu</h1>
+            <h1>95 Ka 'Ikena Loop</h1>
+            <h2>June 19, 2023</h2>
+        </div>
+        <div id="menu-items" class="beverage-header-div">
+        </div>
+    </div>
+    <div id="bottom-div" class="bottom-div">
+
+        <img src="Resources/95KaIkenaLoop-medium.png"  alt="HaleOmo" class="bottom-image">
+    </div>
+</body>
+</html>
