@@ -136,6 +136,29 @@ body {
     padding-right: 30%;
   }
 
+  .wifi-div {
+    text-align: center;
+    line-height: 1;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+
+  .wifi-div h1 {
+    font-size: xx-large;
+  }
+
+  .wifi-div p {
+    font-size: large;
+  }
+
+  .wifi-div img {
+    padding-top: 100px;
+    width: 30%;
+  }
+
   .bottom-div {
     display: flex;
     justify-content: center;

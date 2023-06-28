@@ -53,13 +53,8 @@ var beverages = {allAgeBeverages : {
             },
             {
                 "brand": "Maui Brewing Company",
-                "product": "Coconut Hiwa Porter",
-                "description": "A robust dark ale with hand-toasted coconut & hints of mocha in a 12 ounce can. "
-            },
-            {
-                "brand": "Maui Brewing Company",
-                "product": "Hard Seltzer - POG",
-                "description": "A Passion Organge Guava Selzer made from pure cane sugar in a 12 ounce can. "
+                "product": "Big Swell IPA",
+                "description": "Tropical citrus hops burst from this dry-hopped India Pale Ale in a 12 ounce can. "
             },
             {
                 "brand": "Maui Brewing Company",
@@ -70,9 +65,7 @@ var beverages = {allAgeBeverages : {
                 "brand": "Waikiki Brewing Company",
                 "product": "Craft Lite",
                 "description": "Light lager that's crisp, clean and refreshing. Everything you want from a lager in a 12 ounce can. "
-            },
-
-
+            }
     ]
     }
 }
