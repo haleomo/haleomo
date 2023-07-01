@@ -48,11 +48,6 @@ var beverages = {allAgeBeverages : {
             },
             {
                 "brand": "Maui Brewing Company",
-                "product": "Pacific Lite Session IPA (SIPA)",
-                "description": "Light and Crisp Session IPA in a 12 ounce can. "
-            },
-            {
-                "brand": "Maui Brewing Company",
                 "product": "Big Swell IPA",
                 "description": "Tropical citrus hops burst from this dry-hopped India Pale Ale in a 12 ounce can. "
             },
