@@ -39,6 +39,25 @@ body {
     padding: 5px;
   }
 
+  .maui-div {
+    text-align: center;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .maui-div h1 {
+    font-size: 4em;
+  }
+
+  .maui-div img {
+    width: 90%;
+    padding: 0%;
+    align-self: center;
+    border-radius: 20px;
+  }
 
   .base-image {
     width: 20%;
@@ -144,8 +163,6 @@ body {
     margin-bottom: 0px;
   }
 
-
-  
   .wifi-div h1 {
     font-size: 4em;
   }
