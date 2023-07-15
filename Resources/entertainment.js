@@ -44,7 +44,7 @@ var entertainment = {
             {	name:"Latice Hawaii", 
             	description: "Players take turns laying tiles that each present an animal and an element. Tile placement requires the animal or element to match adjacent tiles. Players earn extra moves through superior strategy."
 			},
-            {	name:"Mexican Train (Diminoes)", 
+            {	name:"Mexican Train (Dominoes)", 
             	description: "The object of the game is for a player to play all the tiles from his or her hand onto one or more chains, or trains, emanating from a central hub or \"station\". The game's most popular name comes from a special optional train that belongs to all players."
 			},
             {

@@ -222,3 +222,42 @@ body {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.activites-items-div {
+  columns: 2 auto;
+  margin-top: 30px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+}
+
+.activity-items-div h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.activity-item h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.activity-item svg {
+  width: 40px;
+}
+
+.activity-header {
+  font-size: 3em;
+  font-weight: lighter;
+  font-style: italic;
+  text-shadow:rgb(128, 128, 128);
+}
+
+.activity-description {
+  font-weight: bolder;
+  text-align: left;
+}
+
+.content-box {
+  columns: 3 auto;
+}
