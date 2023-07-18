@@ -246,11 +246,16 @@ body {
   width: 40px;
 }
 
+.activity-item input {
+  margin-top: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
 .activity-header {
   font-size: 3em;
   font-weight: lighter;
-  font-style: italic;
-  text-shadow:rgb(128, 128, 128);
+  text-shadow:
 }
 
 .activity-description {
@@ -261,3 +266,68 @@ body {
 .content-box {
   columns: 3 auto;
 }
+
+.divider-hr {
+  margin-top: 0;
+  border-top: double;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.favorites-list {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  padding-left: 90%;
+  padding-top: 30px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #c5c3c3;
+  min-width: 260px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/*  */
+.dropdown-content span {
+  display: flex;
+  padding-left: 20px;
+}
+
+.favorites-list-icon {
+  background-color: white;
+}
+
+.save-button {
+  margin-top: 10px;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+
+.trashcan-icon {
+  padding-top: 10px;
+  padding-left: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.favorites-list:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.favorites-list-icon:hover .favorites-list-icon {background-color: #3e8e41;}

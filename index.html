@@ -10,6 +10,9 @@
         <script type="text/javascript" src="Resources/activities.js"></script>
         <script type="text/javascript">
 
+            var selectedActivityDictionary = {};
+            var activitiesDictionary = {};
+
             function populateDiv(divName, array, divClass) {
                 var div = document.getElementById(divName);
                 array.forEach(element => {
@@ -21,6 +24,10 @@
                     " <hr> " +
                     "</div>";
                 });
+            }
+
+            function favoritesListOnClick() {
+                console.log("Clicked!!")
             }
 
             function populateEntertainmentDiv(divName, array, divClass) {
@@ -35,12 +42,55 @@
                 });
             }
 
-            function populateActivitiesDiv(divName, array, divClass) {
+            function updateListDisplay(highlight) {
+                var svg = document.getElementById("heart");
+                if (highlight) {
+                    svg.style.fill = "#f70202";
+                } else {
+                    svg.style.fill = "#1C274C";
+                }
+            }
+
+            function removeFromSelectedActivites(element) {
+                delete selectedActivityDictionary[element.id];
+                document.getElementById(element.id+"-check").click();
+                console.log("Remove Item " + element.id + " " + document.getElementById(element.id+"-check").checked);
+                console.log(selectedActivityDictionary);
+            }
+
+            function getTrashCanIcon(relatedItemId) {
+                return "<svg  fill=\"#000000\" class=\"trashcan-icon\" width=\"800px\" height=\"800px\" viewBox=\"0 0 1000 1000\" xmlns=\"http://www.w3.org/2000/svg\"><path id=\"" + relatedItemId + "\" d=\"M767 336H233q-12 0-21 9t-9 21l38 505q1 13 12 21.5t30 8.5h434q18 0 29-8.5t13-21.5l38-505q0-12-9-21t-21-9zM344 841q-10 0-18-9t-8-21l-26-386q0-12 9-20.5t21-8.5 21 8.5 9 20.5l18 386q0 12-7.5 21t-18.5 9zm182-31q0 13-7.5 22t-18.5 9-18.5-9-7.5-22l-4-385q0-12 9-20.5t21-8.5 21 8.5 9 20.5zm156 1q0 12-8 21t-18 9q-11 0-18.5-9t-7.5-21l18-386q0-12 9-20.5t21-8.5 21 8.5 9 20.5zm101-605l-179-30q-12-2-15-15l-8-33q-4-20-14-26-6-3-22-3h-90q-16 0-23 3-10 6-13 26l-8 33q-2 13-15 15l-179 30q-19 3-31.5 14.5T173 249v28q0 9 6.5 15t15.5 6h610q9 0 15.5-6t6.5-15v-28q0-17-12.5-28.5T783 206z\" onClick=\"removeFromSelectedActivites(this)\"/></svg>";
+            }
+
+            function handleClick(checkbox) {
+                var div = document.getElementById("dropdown-content");
+                if (checkbox.checked) {
+                    selectedActivityDictionary[checkbox.id] = activitiesDictionary[checkbox.id];
+                    div.innerHTML = div.innerHTML + 
+                                        "<span id=\"" + checkbox.name + "-item\"><p class=\"\" id=\"" + checkbox.name + "-item\" >" + 
+                                        activitiesDictionary[checkbox.name].name + "</p>  " + 
+                                        getTrashCanIcon(checkbox.name) + "</span>";
+                } else {
+                    document.getElementById(checkbox.name + "-item").remove();
+                    delete selectedActivityDictionary[checkbox.id];
+                }
+                if (selectedActivityDictionary != {}) {
+                    updateListDisplay(true);
+                } else {
+                    updateListDisplay(false);
+                }
+            }
+
+            function saveSelectedActivities() {
+
+            }
+
+            function populateActivitiesDiv(divName, array, divClass, category) {
                 var div = document.getElementById(divName);
                 array.forEach( element => {
+                    var key = element.name.replace(/\s/g, "");
                     div.innerHTML = div.innerHTML + 
                     "<div class=\"" + divClass + "\"> " +
-                    "<hr>" +                         
                     "<h1>" + element.name + "</h1>" +
                     "<p class=\"activity-description\">" + element.description + "</p>" +
                     "<span><p>" + (element.difficulty?"Difficulty: " + element.difficulty:"") + "</p></span>" +
@@ -49,7 +99,10 @@
                     "<span><p>" + (element.proTip?"Pro Tip: " + element.proTip:"") + "</p></span>" +
                     "<span><p>Fee: " + (element.fee?element.fee:"Free") + "</p></span>" +
                     (element.goodForKeiki?getKeikiIcon():"") +
+                    "<input type=\"checkbox\" id=\"" + key + "-check\" name=\"" + key + "\"" + " value=\"" + element.name + "\" onclick=\"handleClick(this)\">" +
+                    "<label for'\"" + key + "\">Add to My List<\label>" + 
                     "</div>";
+                    activitiesDictionary[key] = {...element, activityType: category};
                 });
 
             }
@@ -77,18 +130,18 @@
 
             
             function getKeikiIcon() {
-                return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" style="fill:#0273a2"><path xmlns="http://www.w3.org/2000/svg" d="M356.522 303.712c50.542 32.395 76.17 87.364 51.594 125.682-24.565 38.338-85.213 38.014-135.757 5.618a161.796 161.796 0 01-18.258-13.595c-14.54 20.659-34.561 39.64-58.329 54.875-69.395 44.479-151.525 44.924-183.737-5.351-32.225-50.274 2.475-124.708 71.869-169.186 57.754-37.022 124.671-43.701 164.142-15.211 29.97-13.058 72.006-6.215 108.476 17.168zm-22.106 34.483c-29.846-19.136-62.199-21.927-75.69-10.658-8.543 7.136-21.222 6.141-28.548-2.24-20.325-23.251-74.607-20.829-124.17 10.942-52.732 33.798-76.844 85.522-59.487 112.601 17.347 27.073 74.417 26.764 127.147-7.033 26.801-17.179 47.328-39.842 57.785-62.662 6.411-13.99 25.384-16.176 34.809-4.011 7.303 9.427 16.926 18.164 28.203 25.395 33.877 21.713 69.465 21.903 79.168 6.759 9.7-15.124-5.338-47.379-39.217-69.094zm-62.975 280.373c-9.279 22.895-31.566 38.197-56.683 38.197-25.971 0-48.852-16.351-57.527-40.378-3.841-10.639-15.579-16.149-26.218-12.309s-16.149 15.579-12.309 26.218c14.49 40.134 52.685 67.429 96.053 67.429 41.942 0 79.153-25.549 94.644-63.773 4.248-10.483-.806-22.424-11.288-26.673s-22.424.806-26.673 11.288zm-90.552-71.918c0 16.927-13.722 30.638-30.648 30.638-16.916 0-30.638-13.711-30.638-30.638s13.722-30.648 30.638-30.648c16.927 0 30.648 13.722 30.648 30.648zm135.196 0c0 16.927-13.722 30.638-30.638 30.638-16.927 0-30.648-13.711-30.648-30.638s13.722-30.648 30.648-30.648c16.916 0 30.638 13.722 30.638 30.648z"/>' +
+                return '<div class=\"tooltip\"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" style="fill:#0273a2"><path xmlns="http://www.w3.org/2000/svg" d="M356.522 303.712c50.542 32.395 76.17 87.364 51.594 125.682-24.565 38.338-85.213 38.014-135.757 5.618a161.796 161.796 0 01-18.258-13.595c-14.54 20.659-34.561 39.64-58.329 54.875-69.395 44.479-151.525 44.924-183.737-5.351-32.225-50.274 2.475-124.708 71.869-169.186 57.754-37.022 124.671-43.701 164.142-15.211 29.97-13.058 72.006-6.215 108.476 17.168zm-22.106 34.483c-29.846-19.136-62.199-21.927-75.69-10.658-8.543 7.136-21.222 6.141-28.548-2.24-20.325-23.251-74.607-20.829-124.17 10.942-52.732 33.798-76.844 85.522-59.487 112.601 17.347 27.073 74.417 26.764 127.147-7.033 26.801-17.179 47.328-39.842 57.785-62.662 6.411-13.99 25.384-16.176 34.809-4.011 7.303 9.427 16.926 18.164 28.203 25.395 33.877 21.713 69.465 21.903 79.168 6.759 9.7-15.124-5.338-47.379-39.217-69.094zm-62.975 280.373c-9.279 22.895-31.566 38.197-56.683 38.197-25.971 0-48.852-16.351-57.527-40.378-3.841-10.639-15.579-16.149-26.218-12.309s-16.149 15.579-12.309 26.218c14.49 40.134 52.685 67.429 96.053 67.429 41.942 0 79.153-25.549 94.644-63.773 4.248-10.483-.806-22.424-11.288-26.673s-22.424.806-26.673 11.288zm-90.552-71.918c0 16.927-13.722 30.638-30.648 30.638-16.916 0-30.638-13.711-30.638-30.638s13.722-30.648 30.638-30.648c16.927 0 30.648 13.722 30.648 30.648zm135.196 0c0 16.927-13.722 30.638-30.638 30.638-16.927 0-30.648-13.711-30.648-30.638s13.722-30.648 30.648-30.648c16.916 0 30.638 13.722 30.638 30.648z"/>' +
                     '<path xmlns="http://www.w3.org/2000/svg" d="M360.506 453.639c21.761 29.897 33.659 65.841 33.659 103.629 0 97.369-78.939 176.302-176.323 176.302-97.377 0-176.323-78.937-176.323-176.302 0-25.956 5.596-51.066 16.264-74.059 4.76-10.26.302-22.437-9.959-27.197s-22.437-.302-27.197 9.959C7.466 494.338.559 525.329.559 557.268c0 119.988 97.285 217.262 217.283 217.262 120.005 0 217.283-97.271 217.283-217.262 0-46.524-14.687-90.891-41.502-127.733-6.656-9.145-19.465-11.163-28.61-4.506s-11.163 19.465-4.506 28.61zm445.747 151.383c-9.279 22.895-31.566 38.197-56.683 38.197-25.971 0-48.852-16.351-57.527-40.378-3.841-10.639-15.579-16.149-26.218-12.309s-16.149 15.579-12.309 26.218c14.49 40.134 52.685 67.429 96.053 67.429 41.942 0 79.153-25.549 94.644-63.773 4.248-10.483-.806-22.424-11.288-26.673s-22.424.806-26.673 11.288zm-93.326-66.898c0 16.927-13.722 30.648-30.638 30.648-16.927 0-30.648-13.722-30.648-30.648s13.722-30.638 30.648-30.638c16.916 0 30.638 13.711 30.638 30.638zm135.197 0c0 16.927-13.722 30.648-30.638 30.648-16.927 0-30.648-13.722-30.648-30.648s13.722-30.638 30.648-30.638c16.916 0 30.638 13.711 30.638 30.638z"/>' +
                     '<path xmlns="http://www.w3.org/2000/svg" d="M901.307 466.294c16.211 27.09 24.895 58.079 24.895 90.378 0 97.369-78.939 176.302-176.323 176.302-97.377 0-176.323-78.937-176.323-176.302 0-33.625 9.412-65.809 26.904-93.643 6.019-9.577 3.134-22.219-6.442-28.237s-22.219-3.134-28.237 6.442c-21.566 34.315-33.184 74.045-33.184 115.438 0 119.988 97.285 217.262 217.283 217.262 120.005 0 217.283-97.271 217.283-217.262 0-39.758-10.719-78.008-30.708-111.411-5.808-9.706-18.384-12.866-28.09-7.058s-12.866 18.384-7.058 28.09z"/>' +
                     '<path xmlns="http://www.w3.org/2000/svg" d="M516.628 520.14c0-128.916 104.505-233.421 233.421-233.421 126.376 0 228.833 102.457 228.833 228.833v113.664h-51.364c-11.311 0-20.48 9.169-20.48 20.48s9.169 20.48 20.48 20.48h54.333c20.977 0 37.99-17.013 37.99-37.99V515.552c0-148.998-120.795-269.793-269.793-269.793-151.537 0-274.381 122.843-274.381 274.381v112.046c0 20.979 17.004 37.99 37.99 37.99h61.471c11.311 0 20.48-9.169 20.48-20.48s-9.169-20.48-20.48-20.48h-58.501V520.14z"/>' +
-                    '<path xmlns="http://www.w3.org/2000/svg" d="M583.592 472.932h332.913c11.311 0 20.48-9.169 20.48-20.48s-9.169-20.48-20.48-20.48H583.592c-11.311 0-20.48 9.169-20.48 20.48s9.169 20.48 20.48 20.48z"/></svg>';
+                    '<path xmlns="http://www.w3.org/2000/svg" d="M583.592 472.932h332.913c11.311 0 20.48-9.169 20.48-20.48s-9.169-20.48-20.48-20.48H583.592c-11.311 0-20.48 9.169-20.48 20.48s9.169 20.48 20.48 20.48z"/></svg><span class="tooltiptext">Keiki Friendly!</span><br/></div>';
             }
 
             function displayActivities() {
-                Object.keys(activities).forEach(key => {
+                Object.keys(activities).forEach(category => {
                     document.getElementById("activity-items").innerHTML = document.getElementById("activity-items").innerHTML + 
-                    "<h1 class=\"activity-header\">" + activities[key].title + "</h1>";
-                    populateActivitiesDiv('activity-items', activities[key].activities, "activity-item");
+                    "<hr class=\"divider-hr\"><h1 class=\"activity-header\">" + activities[category].title + "</h1><hr class=\"divider-hr\">";
+                    populateActivitiesDiv('activity-items', activities[category].activities, "activity-item", category);
 
                 });
             }
@@ -171,6 +224,18 @@
                 <div id="maui" class="maui-div">
                     <h1>Maui</h1>
                     <img src="Resources/MauiMap.png"  alt="Maui Map">
+                    <div class="favorites-list">
+                        <svg id="favorites" class="favorites-list-icon" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="favoritesListOnClick()">
+                            <path d="M20 6L3 6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M10 16H3" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M9 11H3" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                            <path id="heart" d="M16.4901 16.3082L16.935 15.7045L16.935 15.7045L16.4901 16.3082ZM17.5 10.1062L16.9641 10.6309C17.1052 10.775 17.2983 10.8562 17.5 10.8562C17.7017 10.8562 17.8948 10.775 18.0359 10.6309L17.5 10.1062ZM18.5099 16.3083L18.9549 16.912L18.9549 16.912L18.5099 16.3083ZM17.5 16.8103L17.5 16.0603H17.5L17.5 16.8103ZM16.935 15.7045C16.2914 15.2302 15.4675 14.5568 14.8118 13.808C14.1328 13.0325 13.75 12.3064 13.75 11.7148H12.25C12.25 12.8758 12.9489 13.9574 13.6832 14.7961C14.4409 15.6614 15.3619 16.4085 16.0451 16.912L16.935 15.7045ZM13.75 11.7148C13.75 10.607 14.2445 10.0237 14.7533 9.83348C15.2705 9.6401 16.0951 9.74331 16.9641 10.6309L18.0359 9.58145C16.88 8.40091 15.4546 7.96984 14.228 8.42849C12.993 8.89028 12.25 10.1453 12.25 11.7148H13.75ZM18.9549 16.912C19.6381 16.4085 20.5591 15.6614 21.3168 14.7961C22.0511 13.9574 22.75 12.8758 22.75 11.7148H21.25C21.25 12.3064 20.8672 13.0326 20.1882 13.808C19.5325 14.5568 18.7086 15.2302 18.065 15.7045L18.9549 16.912ZM22.75 11.7148C22.75 10.1453 22.007 8.89027 20.772 8.42849C19.5454 7.96985 18.12 8.40091 16.9641 9.58145L18.0359 10.6309C18.9049 9.74331 19.7295 9.6401 20.2467 9.83348C20.7555 10.0237 21.25 10.607 21.25 11.7148H22.75ZM16.0451 16.912C16.4368 17.2007 16.8752 17.5603 17.5 17.5603L17.5 16.0603C17.4852 16.0603 17.4682 16.0626 17.399 16.0252C17.3008 15.972 17.178 15.8836 16.935 15.7045L16.0451 16.912ZM18.065 15.7045C17.822 15.8836 17.6992 15.972 17.601 16.0252C17.5318 16.0626 17.5148 16.0603 17.5 16.0603L17.5 17.5603C18.1248 17.5603 18.5632 17.2007 18.9549 16.912L18.065 15.7045Z" fill="#1C274C"/>
+                            </svg>
+                            <div id="dropdown-content" class="dropdown-content">
+
+                                <button class="save-button" onclick="saveSelectedActivities()">Save</button>
+                            </div>
+                    </div>
                     <div id="activity-items" class="activity-items-div">
                         
                     </div>

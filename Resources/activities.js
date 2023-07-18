@@ -1,3 +1,12 @@
+var activityTypes = ["Beaches", 
+                     "Hiking", 
+                     "Nature Activities", 
+                     "Cultural Activites", 
+                     "Scenic Drives", 
+                     "Indoor Activities",
+                     "Snorkeling"
+                    ]
+
 var activities = {
     beach : {
         title: "Beaches",
@@ -267,10 +276,19 @@ var activities = {
                 goodForKeiki: true
             },
             {
-                name: "Olowalu Beach",
+                name: "Ulua Beach",
                 description: "",
                 directions: "",
                 drivingTime: "",
+                fee: "Free",
+                proTip: ".",
+                goodForKeiki: true
+            },
+            {
+                name: "Kanahena Cove",
+                description: ". Parking is at the ‘Āhihi-Kīna‘U Natural Area Reserve parking lot past Kanahena Cove. You can park here and walk back up the main road going north and enjoy some amazing snorkeling. It’s a little over a quarter mile walk!",
+                directions: "https://www.google.com/maps/dir/95+Ka+%CA%BBIkena+Lp,+Wailuku,+HI+96793,+USA/Kanahena+Cove,+Makena+Rd,+Kihei,+HI+96753,+United+States/@20.749282,-156.5532334,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x7954d37a8296869d:0x3ff0ce8b095d30a9!2m2!1d-156.5105541!2d20.8780141!1m5!1m1!1s0x7954dcb0ca887c2f:0x570aca7584adb1f!2m2!1d-156.437518!2d20.618084!3e0?entry=ttu",
+                drivingTime: "45 minutes",
                 fee: "Free",
                 proTip: ".",
                 goodForKeiki: true
