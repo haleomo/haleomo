@@ -255,7 +255,7 @@ body {
 .activity-header {
   font-size: 3em;
   font-weight: lighter;
-  text-shadow:
+  text-shadow: 1px 1px 2px black;
 }
 
 .activity-description {
@@ -310,7 +310,7 @@ body {
   background-color: white;
 }
 
-.save-button {
+.favorites-list-button {
   margin-top: 10px;
   border-radius: 5px;
   align-self: flex-end;
