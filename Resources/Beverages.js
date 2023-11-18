@@ -4,12 +4,12 @@ var beverages = {allAgeBeverages : {
     {
         "brand": "Tejava",
         "product": "Black Ice Tea",
-        "description": "Black ice tea in a 12-ounce glass bottle."
+        "description": "Black ice tea in a 12 oz. glass bottle."
     },
     {
         "brand": "Big Island Organics",
         "product": "Hawaiian Gingeraid 16 oz. Bottle",
-        "description": "Big Island Organics, Hawaiian Gingerade Is A Usda Certified Organic Drink. This Product Contains Powerful Antioxidants, Anti-inflammatory Agents, And Is Made With Fresh Pressed Ginger."
+        "description": "Big Island Organics, Hawaiian Gingerade Is A Usda Certified Organic Drink. This product contains powerful antioxidants and anti-inflammatory agents and is made with freshly pressed ginger."
     },
     {
         "brand": "Shaka Tea",
@@ -19,12 +19,12 @@ var beverages = {allAgeBeverages : {
     {
         "brand": "Shaka Tea",
         "product": "Mango Hibiscus 12 oz can",
-        "description": "Shaka Tea is brewed with one of the rarest herbal teas in the world, only found in the Hawaiian Islands: māmaki. Every neighborhood has a memorable mango tree in Hawaiʻi. In honor of mango season and sharing mangos between neighbors, enjoy luscious, ripe mangoes mingled with berry-flavored hibiscus.",
+        "description": "Shaka Tea is brewed with one of the rarest herbal teas in the world, only found in the Hawaiian Islands: māmaki. Every neighborhood has a memorable mango tree in Hawaiʻi. In honor of mango season and sharing mangos between neighbors, enjoy luscious, ripe mangoes mingled with berry-flavored hibiscus."
     },
     {
         "brand": "Sprite",
         "product": "Zero -- Mini",
-        "description": "Sprite Zero Sugar is a diet Sprite with no sugar in a 7.5 ounce can. "
+        "description": "Sprite Zero Sugar is a diet Sprite with no sugar in a 7.5-ounce can. "
     },
     {
         "brand": "Hawaiian Soda Company",
@@ -39,7 +39,7 @@ var beverages = {allAgeBeverages : {
      {
         "brand": "Hawaiian Sun",
         "product": "Pass-O-Guava",
-        "description": "Passion fruit aka lilikoi, orange and guava juices are blended to create this tropical flavor that reminds us of hawaii. Made in Hawaii."
+        "description": "Passion fruit aka lilikoi, orange and guava juices are blended to create this tropical flavor that reminds us of Hawaii. Made in Hawaii."
      },
     {
         "brand": "Crystal Geyser",
@@ -54,12 +54,12 @@ var beverages = {allAgeBeverages : {
             {
                 "brand": "Maui Brewing Company",
                 "product": "Hard Seltzer - POG",
-                "description": "A Passion Organge Guava Selzer made from pure cane sugar in a 12 ounce can. "
+                "description": "A Passion Orange Guava Selzer made from pure cane sugar in a 12 oz. can. "
             },
             {
                 "brand": "Maui Brewing Company",
                 "product": "Coconut Hiwa Porter",
-                "description": "Sweet coconut with a coffee/roast aroma. Real coconut; subdued complexity of sweet & spicy"
+                "description": "Sweet coconut with a coffee/roast aroma. Real coconut; subdued complexity of sweet & spicy."
             },
             {
                 "brand": "Maui Brewing Company",
