@@ -2,39 +2,24 @@ var beverages = {allAgeBeverages : {
     title: "All Ages",
     products: [
     {
-        "brand": "MeadowGold",
-        "product": "2% Milk",
-        "description": "Your go-to for goodness. It’s delicious and wholesome — so you’ll get all the nutrients of whole milk and less fat."
-    },
-    {
-        "brand": "Dairy Gold",
-        "product": "Old Fashion Chocolate Milk",
-        "description": "Richer and creamier than our low fat chocolate milk. Made with reduced fat milk, no artificial sweeteners, and real cocoa – this is milk you can feel good about."
-    },
-    {
         "brand": "Tejava",
         "product": "Black Ice Tea",
-        "description": "Black ice tea in a 12 ounce glass bottle."
+        "description": "Black ice tea in a 12-ounce glass bottle."
     },
     {
         "brand": "Big Island Organics",
-        "product": "Hawaiian Gingeraid",
+        "product": "Hawaiian Gingeraid 16 oz. Bottle",
         "description": "Big Island Organics, Hawaiian Gingerade Is A Usda Certified Organic Drink. This Product Contains Powerful Antioxidants, Anti-inflammatory Agents, And Is Made With Fresh Pressed Ginger."
     },
     {
         "brand": "Shaka Tea",
-        "product": "Pineapple Mint",
+        "product": "Pineapple Mint  12 oz can",
         "description": "Shaka Tea is brewed with one of the rarest herbal teas in the world, only found in the Hawaiian Islands: māmaki. Pineapple Mint is a tangy take with a hint of unexpected, herbal and refreshing mint!"
     },
     {
         "brand": "Shaka Tea",
-        "product": "Guava Ginger Blossum",
-        "description": "Shaka Tea is brewed with one of the rarest herbal teas in the world, only found in the Hawaiian Islands: māmaki. Enjoy tart guava with floral ginger blossoms."
-    },
-    {
-        "brand": "Coke",
-        "product": "Diet -- 12oz -- Optional Lemon Slice",
-        "description": "Enjoy the classic taste of Diet Coke in a 12 ounce can."
+        "product": "Mango Hibiscus 12 oz can",
+        "description": "Shaka Tea is brewed with one of the rarest herbal teas in the world, only found in the Hawaiian Islands: māmaki. Every neighborhood has a memorable mango tree in Hawaiʻi. In honor of mango season and sharing mangos between neighbors, enjoy luscious, ripe mangoes mingled with berry-flavored hibiscus.",
     },
     {
         "brand": "Sprite",
@@ -42,19 +27,14 @@ var beverages = {allAgeBeverages : {
         "description": "Sprite Zero Sugar is a diet Sprite with no sugar in a 7.5 ounce can. "
     },
     {
-        "brand": "Coke",
-        "product": "Zero -- Mini",
-        "description": "Enjoy the real taste of Coca-Cola in a zero calorie, sugar free beverage in a 7.5 ounce cans."
-    },
-    {
-        "brand": "Hawaiian Sun",
-        "product": "Lilikoi Lychee",
-        "description": "passion fruit juice and lychee flavor makes this a perfect choice for the beach or pool. Made in Hawaii."
+        "brand": "Hawaiian Soda Company",
+        "product": "Sparkling Lilikoi Lychee",
+        "description": "Passion fruit juice and lychee flavor, with a fizz, makes this a perfect choice for the beach or pool. Made in Hawaii."
      },
      {
-        "brand": "Hawaiian Sun",
-        "product": "Lilikoi Passion",
-        "description": "Lilikoi, also known as passion fruit, is used to create this tropically tart flavor. ask our many fans who are passionate about it!  Made in Hawaii."
+        "brand": "Hawaiian Soda Company",
+        "product": "Mango Sunset",
+        "description": "A tropical flavor explosion of juicy mango, luscious pink guava, zesty orange, and sweet pineapple that'll make your tastebuds dance. It's like a fruity Mai Tai, without the Rum and the questionable decisions."
      },
      {
         "brand": "Hawaiian Sun",
@@ -65,12 +45,7 @@ var beverages = {allAgeBeverages : {
         "brand": "Crystal Geyser",
         "product": "Sparkling Spring Water Lime",
         "description": "Crystal Geyser Alpine Sparkling Spring Water, Lime Is A Pure And Natural Water Option. With Light Flavor And Carbonation, Crystal Geyser Alpine Sparkling Spring Water Gives You A Refreshing And Elegant. This product is Kosher and available with a slice of real lime."
-     },
-     {
-        "brand": "Signature",
-        "product": "Diet Ginger Ale",
-        "description": "Naturally flavored with other natural flavors. 0 calories per 12 fl oz. Calorie free. Caffeine free."
-     }    
+     },  
     ]
     },
     adultBeverages: {
@@ -82,9 +57,29 @@ var beverages = {allAgeBeverages : {
                 "description": "A Passion Organge Guava Selzer made from pure cane sugar in a 12 ounce can. "
             },
             {
-                "brand": "Absolut Vodka",
-                "product": "Moscow Mule Cocktail",
-                "description": "Made with lime juice and ginger beer."
+                "brand": "Maui Brewing Company",
+                "product": "Coconut Hiwa Porter",
+                "description": "Sweet coconut with a coffee/roast aroma. Real coconut; subdued complexity of sweet & spicy"
+            },
+            {
+                "brand": "Maui Brewing Company",
+                "product": "Bikini Blonde Lager",
+                "description": "A clean, crisp & refreshing Helles, perfect any time."
+            },
+            {
+                "brand": "Maui Brewing Company",
+                "product": "Session IPA",
+                "description": "Passion Fruit, Grapefruit, Mango, Tropical, Citrus, Lemon. Crisp and Hoppy with Subtle Bitterness that Dissipates Quickly. "
+            },
+            {
+                "brand": "Kona Brewing Company",
+                "product": "Longboard Island Lager",
+                "description": "Longboard Island Lager is a smooth, refreshing lager fermented and aged for five weeks at cold temperatures to yield its exceptionally smooth flavor. A delicate, slightly spicy hop aroma complements the malty body of this beer."
+            },
+            {
+                "brand": "Kona Brewing Company",
+                "product": "Hanalei Island IPA",
+                "description": "A bitter, moderately strong American Pale Ale that uses its clean, supporting malt to showcase hop character."
             }
     ]
     }
