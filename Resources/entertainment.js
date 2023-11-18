@@ -5,6 +5,9 @@ var entertainment = {
             {	name:"Jarts (Lawn Darts)", 
             	description: "Take turns pitching the aerodynamic lawn darts at the target rings. Land inside the ring and score three points or get closer than your opponent and still score one point. The first to 21 wins!"
 			}, 
+            {	name:"Viking Chess (Kubb)", 
+            	description: "The object of the game is to knock as many of your opponent’s kubb blocks over as you can using the dowels. The dowels MUST be tossed underhand, end-over-end, no helicopters. To win, a team must knock all of their opponent’s kubb blocks over and successively knock over the king."
+			}, 
             {	name:"Headbanz", 
             	description: "Hedbanz is the fast-paced, easy to play question game of “What am I?” Ask “yes” or “no” questions before time runs out to figure out if the cartoon card on your headband is an animal, food or object. Earn 3 scoring badges to win!"
 			}, 
