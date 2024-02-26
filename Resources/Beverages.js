@@ -7,11 +7,6 @@ var beverages = {allAgeBeverages : {
         "description": "Black ice tea in a 12 oz. glass bottle."
     },
     {
-        "brand": "Big Island Organics",
-        "product": "Hawaiian Gingeraid 16 oz. Bottle",
-        "description": "Big Island Organics, Hawaiian Gingerade Is A Usda Certified Organic Drink. This product contains powerful antioxidants and anti-inflammatory agents and is made with freshly pressed ginger."
-    },
-    {
         "brand": "Shaka Tea",
         "product": "Pineapple Mint  12 oz can",
         "description": "Shaka Tea is brewed with one of the rarest herbal teas in the world, only found in the Hawaiian Islands: māmaki. Pineapple Mint is a tangy take with a hint of unexpected, herbal and refreshing mint!"
@@ -22,25 +17,15 @@ var beverages = {allAgeBeverages : {
         "description": "Shaka Tea is brewed with one of the rarest herbal teas in the world, only found in the Hawaiian Islands: māmaki. Every neighborhood has a memorable mango tree in Hawaiʻi. In honor of mango season and sharing mangos between neighbors, enjoy luscious, ripe mangoes mingled with berry-flavored hibiscus."
     },
     {
-        "brand": "Sprite",
-        "product": "Zero -- Mini",
-        "description": "Sprite Zero Sugar is a diet Sprite with no sugar in a 7.5-ounce can. "
+        "brand": "Shaka Tea",
+        "product": "Guava Ginger 12 oz can",
+        "description": "Shaka Tea is brewed with one of the rarest herbal teas in the world, only found in the Hawaiian Islands: māmaki. Shaka Tea's Guava Gingerblossom tea is a tart herbal tea blend with floral notes."
     },
     {
-        "brand": "Hawaiian Soda Company",
-        "product": "Sparkling Lilikoi Lychee",
-        "description": "Passion fruit juice and lychee flavor, with a fizz, makes this a perfect choice for the beach or pool. Made in Hawaii."
-     },
-     {
-        "brand": "Hawaiian Soda Company",
-        "product": "Mango Sunset",
-        "description": "A tropical flavor explosion of juicy mango, luscious pink guava, zesty orange, and sweet pineapple that'll make your tastebuds dance. It's like a fruity Mai Tai, without the Rum and the questionable decisions."
-     },
-     {
-        "brand": "Hawaiian Sun",
-        "product": "Pass-O-Guava",
-        "description": "Passion fruit aka lilikoi, orange and guava juices are blended to create this tropical flavor that reminds us of Hawaii. Made in Hawaii."
-     },
+        "brand": "Sprite",
+        "product": "Zero -- Mini",
+        "description": "Sprite Zero Sugar is a diet Sprite with no sugar in a 16-ounce can. "
+    },
     {
         "brand": "Crystal Geyser",
         "product": "Sparkling Spring Water Lime",
@@ -68,8 +53,18 @@ var beverages = {allAgeBeverages : {
             },
             {
                 "brand": "Maui Brewing Company",
-                "product": "Session IPA",
+                "product": "Pacific Lite Session IPA",
                 "description": "Passion Fruit, Grapefruit, Mango, Tropical, Citrus, Lemon. Crisp and Hoppy with Subtle Bitterness that Dissipates Quickly. "
+            },
+            {
+                "brand": "Kona Brewing Company",
+                "product": "Big Wave Golden Ale",
+                "description": "Light golden ale with a subtle fruitiness and delicate hop aroma. A smooth, easy drinking refreshing ale. The lightly roasted honey malt contributes to the golden hue of this beer and also gives a slight sweetness that is balanced out by our special blend of hops."
+            },
+            {
+                "brand": "Kona Brewing Company",
+                "product": "Gold Cliff IPA",
+                "description": "Bold yet easygoing, brewed with real, refreshing pineapple. Dive in! On Lanai, not far from the island's first pineapple fields, Kaunolu Cove welcomes adventurous snorkelers and daring cliff divers alike."
             },
             {
                 "brand": "Kona Brewing Company",
